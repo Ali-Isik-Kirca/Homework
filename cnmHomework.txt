@@ -1,0 +1,185 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace Cinema_Otomasyonu
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            
+            //Salon No
+            List<string> salonNo = new List<string>();
+            salonNo.Add("A101");
+            salonNo.Add("A102");
+            salonNo.Add("A103");
+            salonNo.Add("A104");
+
+            //Film Saatleri
+            List<string> saatler = new List<string>();
+            saatler.Add("1- 13.00");
+            saatler.Add("2- 15.00");
+            saatler.Add("3- 17.00");
+            saatler.Add("4- 19.00");
+
+            //Film Adlari
+            List<string> filmAdlari = new List<string>();
+            filmAdlari.Add("1- Prestige");
+            filmAdlari.Add("2- Inseption");
+            filmAdlari.Add("3- Kingsman 2");
+            filmAdlari.Add("4- Deadpool 2");
+
+            //Film Fiyatlari
+            List<double> filmFiyat = new List<double>();
+            filmFiyat.Add(18.50);
+            filmFiyat.Add(17.90);
+            filmFiyat.Add(22.50);
+            filmFiyat.Add(13.50);
+
+            salonBilgileri slnBlg;
+            filmBilgileri flmBlg;
+
+            int seansSecim = 0;
+
+            Console.WriteLine("Yıldız Sinemasına hoşgeldiniz...\n-----------------------------------");
+            Console.WriteLine("Gösterimdeki Filmler");
+            foreach (var item in filmAdlari)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("----------------------------------------");
+        A:
+            Console.Write("İzlemek istediginiz filmin numarasini giriniz: ");
+            int filmSecim = Convert.ToInt32(Console.ReadLine());
+            switch (filmSecim)
+            {
+                case 1: Console.WriteLine("Seçilen Film : " + filmAdlari[0]); flmBlg.filmAdi = filmAdlari[0]; slnBlg.slnNo = salonNo[0]; flmBlg.filmFiyat = filmFiyat[0].ToString();
+                E:
+                    Console.WriteLine("--------------\nFilm Saatleri\n");
+                    foreach (var item in saatler) Console.WriteLine(item);
+                    Console.Write("Hangi seansı almak istersiniz : ");
+                    seansSecim = Convert.ToInt32(Console.ReadLine());
+                    switch (seansSecim)
+                    {
+                        case 1: flmBlg.filmSaati = saatler[0]; break;
+                        case 2: flmBlg.filmSaati = saatler[1]; break;
+                        case 3: flmBlg.filmSaati = saatler[2]; break;
+                        case 4: flmBlg.filmSaati = saatler[3]; break;
+                        default: Console.WriteLine("Lütfen film saatini doğru giriniz"); goto E;
+                    }
+                    break;
+                case 2: Console.WriteLine("Secilen film : " + filmAdlari[1]); flmBlg.filmAdi = filmAdlari[1]; slnBlg.slnNo = salonNo[1]; flmBlg.filmFiyat = filmFiyat[1].ToString();
+                D:
+                    Console.WriteLine("--------------\nFilm Saatleri\n");
+                    foreach (var item in saatler) Console.WriteLine(item);
+                    Console.Write("Hangi seansı almak istersiniz : ");
+                    seansSecim = Convert.ToInt32(Console.ReadLine());
+                    switch (seansSecim)
+                    {
+                        case 1: flmBlg.filmSaati = saatler[0]; break;
+                        case 2: flmBlg.filmSaati = saatler[1]; break;
+                        case 3: flmBlg.filmSaati = saatler[2]; break;
+                        case 4: flmBlg.filmSaati = saatler[3]; break;
+                        default: Console.WriteLine("Lütfen film saatini doğru giriniz"); goto D;
+                    }
+                    break;
+                case 3: Console.WriteLine("Secilen film : " + filmAdlari[2]); flmBlg.filmAdi = filmAdlari[2]; slnBlg.slnNo = salonNo[2]; flmBlg.filmFiyat = filmFiyat[2].ToString();
+                B:
+                    Console.WriteLine("--------------\nFilm Saatleri\n");
+                    foreach (var item in saatler) Console.WriteLine(item);
+                    Console.Write("Hangi seansı almak istersiniz : ");
+                    seansSecim = Convert.ToInt32(Console.ReadLine());
+                    switch (seansSecim)
+                    {
+                        case 1: flmBlg.filmSaati = saatler[0]; break;
+                        case 2: flmBlg.filmSaati = saatler[1]; break;
+                        case 3: flmBlg.filmSaati = saatler[2]; break;
+                        case 4: flmBlg.filmSaati = saatler[3]; break;
+                        default: Console.WriteLine("Lütfen film saatini doğru giriniz"); goto B;
+                    }
+                    break;
+                case 4: Console.WriteLine("Secilen film : " + filmAdlari[3]); flmBlg.filmAdi = filmAdlari[3]; slnBlg.slnNo = salonNo[3]; flmBlg.filmFiyat = filmFiyat[3].ToString();
+                C:
+                    Console.WriteLine("--------------\nFilm Saatleri\n");
+                    foreach (var item in saatler) Console.WriteLine(item);
+                    Console.Write("Hangi seansı almak istersiniz : ");
+                    seansSecim = Convert.ToInt32(Console.ReadLine());
+                    switch (seansSecim)
+                    {
+                        case 1: flmBlg.filmSaati = saatler[0]; break;
+                        case 2: flmBlg.filmSaati = saatler[1]; break;
+                        case 3: flmBlg.filmSaati = saatler[2]; break;
+                        case 4: flmBlg.filmSaati = saatler[3]; break;
+                        default: Console.WriteLine("Lütfen film saatini doğru giriniz"); goto C;
+                    }
+                    break;
+                default: Console.WriteLine("Lütfen tekrar giriniz"); goto A;
+            }
+            Console.WriteLine("-------------------------------------------");
+
+
+            
+
+
+            musteriBilgileri mBilgi;
+            Console.Write("Adınızı ve Soyadınızı Giriniz : ");
+            mBilgi.mAdSoyad = Console.ReadLine();
+            Console.Write("Yaşınızı Giriniz : ");
+            mBilgi.yas = int.Parse(Console.ReadLine());
+            Console.Write("Tel No Giriniz : ");
+            mBilgi.telNo = Convert.ToInt64(Console.ReadLine());
+
+            biletBilgileri bltBilgi;
+            bltBilgi.biletNo = 0;
+            bltBilgi.fiyat = 0;
+
+            Console.WriteLine("Biletiniz Yazdırılıyor...");
+            Console.WriteLine("-----------------------------------------------------------");
+            Console.WriteLine("Müşteri Bilgileri");
+            Console.WriteLine("Ad Soyad : " + mBilgi.mAdSoyad + "\t\tYaş : " + mBilgi.yas + "\t\tTel No : " + mBilgi.telNo);
+            Console.WriteLine("Film Bilgileri");
+            Console.WriteLine("Film Adi : " + flmBlg.filmAdi + "\t\tFilm Saati : " + flmBlg.filmSaati);
+            Console.WriteLine("Bilet Bilgileri");
+            Console.WriteLine("Salon No : " + slnBlg.slnNo + "\t\tBilet No : " + bltBilgi.biletNo++ + "\t\tToplam Fiyat : " + flmBlg.filmFiyat);
+
+
+
+            Console.ReadKey();
+
+
+        }
+
+
+
+    }
+
+
+   
+    struct biletBilgileri
+    {
+        public int biletNo;
+        public double fiyat;
+    }
+    struct salonBilgileri
+    {
+        public string slnNo;
+    }
+
+    struct musteriBilgileri
+    {
+        public string mAdSoyad;
+        public int yas;
+        public long telNo;
+    }
+    struct filmBilgileri
+    {
+        public string filmAdi;
+        public string filmSaati;
+        public string filmFiyat;
+    }
+
+}
